@@ -5,27 +5,23 @@ __pycache__/
 .venv/
 venv/
 .DS_Store
+*.swp
 
-# Default: ignore large file types
-*.parquet
-*.feather
-*.csv
-*.csv.zip
-*.zip
+# Ignore ONLY raw source data archives
+bts_on_time_data/raw_csv/
+bts_on_time_data/zip/
 
-# BTS data folder: ignore all by default
-bts_on_time_data/*
-
-# Allow the EDA subfolder to be versioned selectively
-!bts_on_time_data/eda/
-
-# Inside EDA: ignore everything...
-bts_on_time_data/eda/*
-
-# ...except the Week3 artifacts we WANT to track
-!bts_on_time_data/eda/week3_*.json
-!bts_on_time_data/eda/week3_*.csv
-!bts_on_time_data/eda/week3_*.png
-!bts_on_time_data/eda/week3_route_clusters.csv
-!bts_on_time_data/eda/week3_route_cluster_summary.csv
-!bts_on_time_data/eda/hist_arrdelay.png
+# Auto-ignored >95MB files to avoid GitHub 100MB limit:
+bts_on_time_data/parquet/bts_on_time_all.parquet
+bts_on_time_data/raw_csv/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2024_1.csv
+bts_on_time_data/raw_csv/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2024_10.csv
+bts_on_time_data/raw_csv/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2024_11.csv
+bts_on_time_data/raw_csv/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2024_12.csv
+bts_on_time_data/raw_csv/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2024_2.csv
+bts_on_time_data/raw_csv/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2024_3.csv
+bts_on_time_data/raw_csv/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2024_4.csv
+bts_on_time_data/raw_csv/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2024_9.csv
+bts_on_time_data/raw_csv/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2025_1.csv
+bts_on_time_data/raw_csv/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2025_2.csv
+bts_on_time_data/raw_csv/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2025_3.csv
+bts_on_time_data/raw_csv/On_Time_Reporting_Carrier_On_Time_Performance_(1987_present)_2025_4.csv

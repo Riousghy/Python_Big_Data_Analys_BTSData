@@ -1,0 +1,17 @@
+column,dtype,description
+CRSDepTime_min,int64,minutes since midnight derived from HHMM
+DepTime_min,float64,minutes since midnight derived from HHMM
+CRSArrTime_min,int64,minutes since midnight derived from HHMM
+ArrTime_min,float64,minutes since midnight derived from HHMM
+tod_bin,string,time-of-day bin from CRSDepTime_min (night/early/morning/midday/evening/late)
+dow,int32,day of week (0=Mon)
+is_weekend,bool,bool
+quarter,int32,calendar quarter 1–4
+season,string,meteorological season (DJF/MAM/JJA/SON)
+route_med_arr_delay,float64,median ArrDelay for Origin–Dest
+route_ontime_rate,float64,1 - mean(ArrDel15) for Origin–Dest
+route_flights,int64,count for Origin–Dest
+carrier_med_arr_delay,float64,median ArrDelay for carrier
+carrier_ontime_rate,float64,1 - mean(ArrDel15) for carrier
+carrier_flights,int64,count for carrier
+Unnamed: 109,dropped,dropped junk/empty tail column
