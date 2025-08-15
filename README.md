@@ -1,6 +1,6 @@
 # Python_Big_Data_Analys_BTSData
 
-Week 3 baselines & evaluation on BTS On-Time dataset.
+
 
 ## Quickstart
 python -m venv .venv && source .venv/bin/activate
