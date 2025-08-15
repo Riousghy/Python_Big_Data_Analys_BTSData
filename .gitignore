@@ -1,20 +1,31 @@
+# Python cache & env
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .venv/
 venv/
+.DS_Store
 
-# local data & heavy outputs
-bts_on_time_data/
-data/
-outputs/
-artifacts/
+# Default: ignore large file types
 *.parquet
 *.feather
 *.csv
 *.csv.zip
 *.zip
 
-# OS/editor junk
-.DS_Store
-*.swp
+# BTS data folder: ignore all by default
+bts_on_time_data/*
+
+# Allow the EDA subfolder to be versioned selectively
+!bts_on_time_data/eda/
+
+# Inside EDA: ignore everything...
+bts_on_time_data/eda/*
+
+# ...except the Week3 artifacts we WANT to track
+!bts_on_time_data/eda/week3_*.json
+!bts_on_time_data/eda/week3_*.csv
+!bts_on_time_data/eda/week3_*.png
+!bts_on_time_data/eda/week3_route_clusters.csv
+!bts_on_time_data/eda/week3_route_cluster_summary.csv
+!bts_on_time_data/eda/hist_arrdelay.png
