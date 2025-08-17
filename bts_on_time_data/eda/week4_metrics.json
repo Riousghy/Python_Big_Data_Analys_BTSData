@@ -1,0 +1,270 @@
+{
+  "regression": {
+    "ridge": {
+      "val": {
+        "MAE": 8.191237672989818,
+        "RMSE": 11.395163177433242,
+        "R2": 0.9609170943405244
+      },
+      "test": {
+        "MAE": 7.744200214572428,
+        "RMSE": 11.055559485092555,
+        "R2": 0.9555342074264159
+      }
+    },
+    "rf": {
+      "val": {
+        "MAE": 8.798130824761744,
+        "RMSE": 12.328272466251475,
+        "R2": 0.9542543086570416
+      },
+      "test": {
+        "MAE": 8.286566380422514,
+        "RMSE": 11.74101939502366,
+        "R2": 0.9498493926034124
+      }
+    }
+  },
+  "classification": {
+    "logreg": {
+      "uncalibrated": {
+        "val": {
+          "ROC_AUC": 0.5606221015064446,
+          "PR_AUC": 0.23079806703335598,
+          "best_thr_f1": 0.3388081891913184,
+          "bestF1_val": 0.33675772792152886,
+          "prec_val": 0.21501264780281193,
+          "rec_val": 0.776338147833475
+        },
+        "test": {
+          "ROC_AUC": 0.5822755262442529,
+          "PR_AUC": 0.2406627068609219,
+          "cm@0.5": {
+            "threshold": 0.5,
+            "TP": 881,
+            "FP": 2732,
+            "TN": 3904,
+            "FN": 751
+          },
+          "cm@bestF1(val)": {
+            "threshold": 0.3388081891913184,
+            "TP": 1290,
+            "FP": 4584,
+            "TN": 2052,
+            "FN": 342
+          },
+          "brier": 0.2551687378134362,
+          "thr_cost": 0.3465656565656566,
+          "cost_test": 6255.0,
+          "FP_cost": 1.0,
+          "FN_cost": 5.0,
+          "cm@thr_cost": {
+            "threshold": 0.3465656565656566,
+            "TP": 1281,
+            "FP": 4500,
+            "TN": 2136,
+            "FN": 351
+          }
+        }
+      },
+      "calibrated": {
+        "val": {
+          "ROC_AUC": 0.5606221015064446,
+          "PR_AUC": 0.23079806703335598,
+          "best_thr_f1": 0.3388081891913184,
+          "bestF1_val": 0.33675772792152886,
+          "prec_val": 0.21501264780281193,
+          "rec_val": 0.776338147833475
+        },
+        "test": {
+          "ROC_AUC": 0.5822755262442529,
+          "PR_AUC": 0.2406627068609219,
+          "brier": 0.15697029221590506
+        }
+      }
+    },
+    "rf": {
+      "uncalibrated": {
+        "val": {
+          "ROC_AUC": 0.5697908213636109,
+          "PR_AUC": 0.23859023928479967,
+          "best_thr_f1": 0.1025,
+          "bestF1_val": 0.33846748104836677,
+          "prec_val": 0.21902143348122227,
+          "rec_val": 0.7444774851316908
+        },
+        "test": {
+          "ROC_AUC": 0.5888399136025718,
+          "PR_AUC": 0.24715661274795003,
+          "cm@0.5": {
+            "threshold": 0.5,
+            "TP": 82,
+            "FP": 203,
+            "TN": 6433,
+            "FN": 1550
+          },
+          "cm@bestF1(val)": {
+            "threshold": 0.1025,
+            "TP": 1280,
+            "FP": 4438,
+            "TN": 2198,
+            "FN": 352
+          },
+          "brier": 0.16451707899064097,
+          "thr_cost": 0.059494949494949496,
+          "cost_test": 6368.0,
+          "FP_cost": 1.0,
+          "FN_cost": 5.0,
+          "cm@thr_cost": {
+            "threshold": 0.059494949494949496,
+            "TP": 1442,
+            "FP": 5418,
+            "TN": 1218,
+            "FN": 190
+          }
+        }
+      },
+      "calibrated": {
+        "val": {
+          "ROC_AUC": 0.5697908213636109,
+          "PR_AUC": 0.23859023928479967,
+          "best_thr_f1": 0.1025,
+          "bestF1_val": 0.33846748104836677,
+          "prec_val": 0.21902143348122227,
+          "rec_val": 0.7444774851316908
+        },
+        "test": {
+          "ROC_AUC": 0.5888400521073409,
+          "PR_AUC": 0.24715592329951264,
+          "brier": 0.15645630116597198
+        }
+      }
+    },
+    "hgb": {
+      "uncalibrated": {
+        "val": {
+          "ROC_AUC": 0.5690759562047284,
+          "PR_AUC": 0.23877316883296112,
+          "best_thr_f1": 0.41795071380853244,
+          "bestF1_val": 0.33903451067669405,
+          "prec_val": 0.2225322173508702,
+          "rec_val": 0.7115548003398471
+        },
+        "test": {
+          "ROC_AUC": 0.5887000237858857,
+          "PR_AUC": 0.24736108336358886,
+          "cm@0.5": {
+            "threshold": 0.5,
+            "TP": 972,
+            "FP": 3007,
+            "TN": 3629,
+            "FN": 660
+          },
+          "cm@bestF1(val)": {
+            "threshold": 0.41795071380853244,
+            "TP": 1196,
+            "FP": 4030,
+            "TN": 2606,
+            "FN": 436
+          },
+          "brier": 0.2543898496299952,
+          "thr_cost": 0.41585858585858587,
+          "cost_test": 6224.0,
+          "FP_cost": 1.0,
+          "FN_cost": 5.0,
+          "cm@thr_cost": {
+            "threshold": 0.41585858585858587,
+            "TP": 1197,
+            "FP": 4049,
+            "TN": 2587,
+            "FN": 435
+          }
+        }
+      },
+      "calibrated": {
+        "val": {
+          "ROC_AUC": 0.5690759562047284,
+          "PR_AUC": 0.23877316883296112,
+          "best_thr_f1": 0.41795071380853244,
+          "bestF1_val": 0.33903451067669405,
+          "prec_val": 0.2225322173508702,
+          "rec_val": 0.7115548003398471
+        },
+        "test": {
+          "ROC_AUC": 0.5887000237858857,
+          "PR_AUC": 0.24736108336358886,
+          "brier": 0.15748437640738583
+        }
+      }
+    }
+  },
+  "hgb_tuning": {
+    "PR_AUC_val": 0.23877316883296112,
+    "max_depth": 8,
+    "lr": 0.05,
+    "max_leaf_nodes": 63,
+    "pos_w": 4.540034921426789,
+    "mode": "fast"
+  },
+  "calibration": "sigmoid",
+  "costs": {
+    "FP_cost": 1.0,
+    "FN_cost": 5.0
+  },
+  "brier_defined": true,
+  "features": {
+    "groups": {
+      "CORE": [
+        "Distance",
+        "dow",
+        "is_weekend",
+        "quarter",
+        "CRSDepTime_min"
+      ],
+      "PROFILE": [
+        "route_med_arr_delay",
+        "route_ontime_rate",
+        "route_flights",
+        "carrier_med_arr_delay",
+        "carrier_ontime_rate",
+        "carrier_flights"
+      ],
+      "ROLLING": [
+        "route_on_7d",
+        "route_on_14d",
+        "route_on_30d",
+        "route_med_30d",
+        "car_on_7d",
+        "car_on_14d",
+        "car_on_30d",
+        "car_med_30d",
+        "orig_hour_load_7d",
+        "dest_hour_load_7d"
+      ]
+    },
+    "rolling_added": [
+      "route_on_7d",
+      "route_on_14d",
+      "route_on_30d",
+      "route_med_30d",
+      "car_on_7d",
+      "car_on_14d",
+      "car_on_30d",
+      "car_med_30d",
+      "orig_hour_load_7d",
+      "dest_hour_load_7d"
+    ]
+  },
+  "ablation": {
+    "reg_csv": "bts_on_time_data/eda/week4_ablation_reg.csv",
+    "clf_csv": "bts_on_time_data/eda/week4_ablation_clf.csv"
+  },
+  "shap": {
+    "rf_clf_summary_png": null,
+    "rf_reg_summary_png": null
+  },
+  "backtest": {
+    "reg_csv": "bts_on_time_data/eda/week4_backtest_reg.csv",
+    "clf_csv": "bts_on_time_data/eda/week4_backtest_clf.csv"
+  }
+}
