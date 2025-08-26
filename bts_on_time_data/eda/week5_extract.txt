@@ -1,0 +1,259 @@
+======== Week5 Extract — Files & Stats @ /Users/guohaoyang/Desktop/vscworkspace/BTS/bts_on_time_data/eda ========
+
+======== Regression / 回归 ========
+Table / 表: week5_cv_regression.csv
+[week5_cv_regression.csv] rows=8 cols=6
+Per-model mean metrics / 各模型均值：
+model      RMSE      MAE       R2
+   rf 11.740110 8.365516 0.956306
+ridge 11.236228 8.022451 0.959954
+Full table / 全表：
+model  fold      RMSE      MAE       R2  n_val
+ridge     1 11.378337 8.210723 0.959167   7703
+ridge     2 11.448538 8.234397 0.960068   7323
+ridge     3 11.151830 7.971865 0.964332   8668
+ridge     4 10.966209 7.672817 0.956250   8268
+   rf     1 11.963887 8.616524 0.954856   7703
+   rf     2 11.935000 8.585286 0.956602   7323
+   rf     3 11.691400 8.280234 0.960797   8668
+   rf     4 11.370152 7.980020 0.952968   8268
+
+======== Classification / 分类 ========
+Table / 表: week5_cv_classification.csv
+[week5_cv_classification.csv] rows=8 cols=19
+Per-model mean metrics / 各模型均值：
+ model  ROC_AUC   PR_AUC    brier
+logreg 0.962077 0.922348 0.065126
+    rf 0.955890 0.904991 0.053605
+Full table / 全表：
+ model  fold  ROC_AUC   PR_AUC  best_thr_F1  best_F1  prec@best  rec@best    brier  cm@0.5_TP  cm@0.5_FP  cm@0.5_TN  cm@0.5_FN  cm@best_TP  cm@best_FP  cm@best_TN  cm@best_FN  thr_cost  n_val
+logreg     1 0.959248 0.912919     0.802723 0.842143   0.870509  0.815568 0.070092       1273        571       5706        153        1163         174        6103         263  0.628687   7703
+logreg     2 0.968048 0.934601     0.720163 0.865809   0.867812  0.863816 0.061328       1392        454       5349        128        1313         201        5602         207  0.490101   7323
+logreg     3 0.963141 0.924529     0.807788 0.848917   0.889857  0.811578 0.067261       1591        582       6324        171        1430         178        6728         332  0.544545   8668
+logreg     4 0.957871 0.917344     0.758062 0.848015   0.895706  0.805147 0.061822       1426        451       6185        206        1314         154        6482         318  0.455455   8268
+    rf     1 0.953289 0.894010     0.413333 0.830791   0.840632  0.821178 0.052566       1094        147       6130        332        1175         229        6048         251  0.262424   7703
+    rf     2 0.963598 0.919892     0.370000 0.855646   0.851466  0.859868 0.052087       1196        129       5674        324        1309         232        5571         211  0.237677   7323
+    rf     3 0.957917 0.906680     0.433333 0.840664   0.863555  0.818956 0.055317       1376        169       6737        386        1444         233        6673         318  0.237677   8668
+    rf     4 0.948755 0.899382     0.396667 0.838894   0.871287  0.808824 0.054450       1235        115       6521        397        1320         199        6437         312  0.222828   8268
+
+======== Per-fold artifacts — Logistic Regression / 各折产物 — 逻辑回归 ========
+- File / 文件: week5_cv_logreg_fold1_cost.csv
+  Columns not standard; head(10) / 列名非常规，展示前10行：
+     thr  val_cost
+0.010000    5932.0
+0.014949    5598.0
+0.019899    5236.0
+0.024848    4888.0
+0.029798    4565.0
+0.034747    4315.0
+0.039697    4078.0
+0.044646    3872.0
+0.049596    3711.0
+0.054545    3520.0
+- File / 文件: week5_cv_logreg_fold2_cost.csv
+  Columns not standard; head(10) / 列名非常规，展示前10行：
+     thr  val_cost
+0.010000    5475.0
+0.014949    5156.0
+0.019899    4809.0
+0.024848    4488.0
+0.029798    4195.0
+0.034747    3953.0
+0.039697    3706.0
+0.044646    3508.0
+0.049596    3332.0
+0.054545    3215.0
+- File / 文件: week5_cv_logreg_fold3_cost.csv
+  Columns not standard; head(10) / 列名非常规，展示前10行：
+     thr  val_cost
+0.010000    6634.0
+0.014949    6320.0
+0.019899    5996.0
+0.024848    5677.0
+0.029798    5361.0
+0.034747    5069.0
+0.039697    4835.0
+0.044646    4566.0
+0.049596    4321.0
+0.054545    4100.0
+- File / 文件: week5_cv_logreg_fold4_cost.csv
+  Columns not standard; head(10) / 列名非常规，展示前10行：
+     thr  val_cost
+0.010000    6339.0
+0.014949    5998.0
+0.019899    5673.0
+0.024848    5276.0
+0.029798    4965.0
+0.034747    4679.0
+0.039697    4384.0
+0.044646    4141.0
+0.049596    3958.0
+0.054545    3769.0
+PR curves (logreg) / PR 曲线（logreg） (4 files)
+ - week5_cv_logreg_fold1_pr.png
+ - week5_cv_logreg_fold2_pr.png
+ - week5_cv_logreg_fold3_pr.png
+ - week5_cv_logreg_fold4_pr.png
+Reliability (logreg) / 可靠性（logreg） (4 files)
+ - week5_cv_logreg_fold1_reliability.png
+ - week5_cv_logreg_fold2_reliability.png
+ - week5_cv_logreg_fold3_reliability.png
+ - week5_cv_logreg_fold4_reliability.png
+
+======== Per-fold artifacts — Random Forest / 各折产物 — 随机森林 ========
+- File / 文件: week5_cv_rf_fold1_cost.csv
+  Columns not standard; head(10) / 列名非常规，展示前10行：
+     thr  val_cost
+0.010000    6017.0
+0.014949    5588.0
+0.019899    5356.0
+0.024848    4835.0
+0.029798    4546.0
+0.034747    4057.0
+0.039697    3799.0
+0.044646    3369.0
+0.049596    3175.0
+0.054545    2836.0
+- File / 文件: week5_cv_rf_fold2_cost.csv
+  Columns not standard; head(10) / 列名非常规，展示前10行：
+     thr  val_cost
+0.010000    5493.0
+0.014949    5033.0
+0.019899    4796.0
+0.024848    4316.0
+0.029798    4085.0
+0.034747    3635.0
+0.039697    3405.0
+0.044646    3046.0
+0.049596    2866.0
+0.054545    2563.0
+- File / 文件: week5_cv_rf_fold3_cost.csv
+  Columns not standard; head(10) / 列名非常规，展示前10行：
+     thr  val_cost
+0.010000    6657.0
+0.014949    6279.0
+0.019899    6040.0
+0.024848    5496.0
+0.029798    5233.0
+0.034747    4700.0
+0.039697    4453.0
+0.044646    3993.0
+0.049596    3787.0
+0.054545    3377.0
+- File / 文件: week5_cv_rf_fold4_cost.csv
+  Columns not standard; head(10) / 列名非常规，展示前10行：
+     thr  val_cost
+0.010000    6409.0
+0.014949    6000.0
+0.019899    5742.0
+0.024848    5212.0
+0.029798    4946.0
+0.034747    4452.0
+0.039697    4209.0
+0.044646    3811.0
+0.049596    3600.0
+0.054545    3248.0
+PR curves (rf) / PR 曲线（rf） (4 files)
+ - week5_cv_rf_fold1_pr.png
+ - week5_cv_rf_fold2_pr.png
+ - week5_cv_rf_fold3_pr.png
+ - week5_cv_rf_fold4_pr.png
+Reliability (rf) / 可靠性（rf） (4 files)
+ - week5_cv_rf_fold1_reliability.png
+ - week5_cv_rf_fold2_reliability.png
+ - week5_cv_rf_fold3_reliability.png
+ - week5_cv_rf_fold4_reliability.png
+
+======== Deep Learning (TensorFlow) / 深度学习（TensorFlow） ========
+- File / 文件: week5_tf_prob_test.csv
+  rows=8268 cols=2
+  prob five-number summary / 概率五数概括：
+  0.0002 0.0068 0.0182 0.0993 1.0000
+  head(10):
+ y_true   y_prob
+    0.0 0.010907
+    1.0 0.999940
+    0.0 0.009664
+    1.0 0.829092
+    1.0 0.226922
+    0.0 0.002898
+    0.0 0.073986
+    0.0 0.005169
+    0.0 0.444066
+    0.0 0.010781
+  tail(10):
+ y_true   y_prob
+    0.0 0.011920
+    0.0 0.109889
+    0.0 0.010891
+    0.0 0.009266
+    0.0 0.027178
+    0.0 0.102845
+    1.0 0.991764
+    0.0 0.013306
+    0.0 0.079277
+    0.0 0.057649
+Training ROC / 训练 ROC (1 files)
+ - week5_tf_training_roc.png
+Training PR / 训练 PR (1 files)
+ - week5_tf_training_pr.png
+Test PR / 测试 PR (1 files)
+ - week5_tf_pr_test.png
+Test Reliability / 测试可靠性 (1 files)
+ - week5_tf_reliability_test.png
+
+======== Summary JSON / 汇总 JSON ========
+Raw JSON / 原始 JSON：
+{
+  "cv_regression_csv": "bts_on_time_data/eda/week5_cv_regression.csv",
+  "cv_classification_csv": "bts_on_time_data/eda/week5_cv_classification.csv",
+  "dl": {
+    "tf_mlp_test": {
+      "ROC_AUC": 0.9609435480415796,
+      "PR_AUC": 0.9204377353177443,
+      "Brier": 0.04461692461428532,
+      "cm@0.5": {
+        "threshold": 0.5,
+        "TP": 1259,
+        "FP": 99,
+        "TN": 6537,
+        "FN": 373
+      },
+      "cm@best": {
+        "threshold": 0.4480578601360321,
+        "TP": 1287,
+        "FP": 115,
+        "TN": 6521,
+        "FN": 345
+      },
+      "best_thr_from_val": 0.4480578601360321
+    }
+  },
+  "config": {
+    "n_splits": 4,
+    "fp_cost": 1.0,
+    "fn_cost": 5.0,
+    "dl_epochs": 20,
+    "dl_batch": 512
+  },
+  "features": {
+    "num": [
+      "Distance",
+      "CRSDepTime_min",
+      "dow",
+      "is_weekend",
+      "quarter",
+      "DepDelay",
+      "TaxiOut"
+    ],
+    "cat": [
+      "Reporting_Airline",
+      "Origin",
+      "Dest",
+      "tod_bin",
+      "season"
+    ],
+    "y_reg": "ArrDelay",
+    "y_clf": "ArrDel15"
+  }
+}

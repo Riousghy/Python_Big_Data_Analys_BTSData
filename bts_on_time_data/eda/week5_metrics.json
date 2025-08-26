@@ -1,0 +1,53 @@
+{
+  "cv_regression_csv": "bts_on_time_data/eda/week5_cv_regression.csv",
+  "cv_classification_csv": "bts_on_time_data/eda/week5_cv_classification.csv",
+  "dl": {
+    "tf_mlp_test": {
+      "ROC_AUC": 0.9609435480415796,
+      "PR_AUC": 0.9204377353177443,
+      "Brier": 0.04461692461428532,
+      "cm@0.5": {
+        "threshold": 0.5,
+        "TP": 1259,
+        "FP": 99,
+        "TN": 6537,
+        "FN": 373
+      },
+      "cm@best": {
+        "threshold": 0.4480578601360321,
+        "TP": 1287,
+        "FP": 115,
+        "TN": 6521,
+        "FN": 345
+      },
+      "best_thr_from_val": 0.4480578601360321
+    }
+  },
+  "config": {
+    "n_splits": 4,
+    "fp_cost": 1.0,
+    "fn_cost": 5.0,
+    "dl_epochs": 20,
+    "dl_batch": 512
+  },
+  "features": {
+    "num": [
+      "Distance",
+      "CRSDepTime_min",
+      "dow",
+      "is_weekend",
+      "quarter",
+      "DepDelay",
+      "TaxiOut"
+    ],
+    "cat": [
+      "Reporting_Airline",
+      "Origin",
+      "Dest",
+      "tod_bin",
+      "season"
+    ],
+    "y_reg": "ArrDelay",
+    "y_clf": "ArrDel15"
+  }
+}
