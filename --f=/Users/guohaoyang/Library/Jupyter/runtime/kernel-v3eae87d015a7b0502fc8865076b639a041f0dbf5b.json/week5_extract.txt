@@ -1,0 +1,31 @@
+======== Week5 Extract — Files & Stats ========
+
+======== Regression / 回归 ========
+Table / 表: week5_cv_regression.csv
+[week5_cv_regression.csv] table missing or empty.
+Full table / 全表：
+(missing)
+
+======== Classification / 分类 ========
+Table / 表: week5_cv_classification.csv
+[week5_cv_classification.csv] table missing or empty.
+Full table / 全表：
+(missing)
+
+======== Per-fold artifacts — Logistic Regression / 各折产物 — 逻辑回归 ========
+PR curves (logreg) / PR 曲线（logreg） (0 files)
+Reliability (logreg) / 可靠性（logreg） (0 files)
+
+======== Per-fold artifacts — Random Forest / 各折产物 — 随机森林 ========
+PR curves (rf) / PR 曲线（rf） (0 files)
+Reliability (rf) / 可靠性（rf） (0 files)
+
+======== Deep Learning (TensorFlow) / 深度学习（TensorFlow） ========
+No week5_tf_prob_test.csv found / 未发现 week5_tf_prob_test.csv
+Training ROC / 训练 ROC (0 files)
+Training PR / 训练 PR (0 files)
+Test PR / 测试 PR (0 files)
+Test Reliability / 测试可靠性 (0 files)
+
+======== Summary JSON / 汇总 JSON ========
+No week5_metrics.json found / 未发现 week5_metrics.json
