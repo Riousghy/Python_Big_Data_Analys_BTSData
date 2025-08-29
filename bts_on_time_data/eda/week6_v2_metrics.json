@@ -1,0 +1,104 @@
+{
+  "config": {
+    "epochs": 50,
+    "batch": 512,
+    "lr": 0.001,
+    "dropout": 0.3,
+    "hidden": [
+      128,
+      64,
+      32
+    ],
+    "fp_cost": 1.0,
+    "fn_cost": 5.0,
+    "n_cal_bins": 15
+  },
+  "results": {
+    "uncal": {
+      "ROC_AUC": 0.9626274728641456,
+      "PR_AUC": 0.9227742901784989,
+      "Brier": 0.055284249077945095,
+      "cm@0.5": {
+        "threshold": 0.5,
+        "TP": 1426,
+        "FP": 403,
+        "TN": 6317,
+        "FN": 206
+      },
+      "cm@best_val": {
+        "threshold": 0.8157827854156494,
+        "TP": 1305,
+        "FP": 124,
+        "TN": 6596,
+        "FN": 327
+      },
+      "best_thr_from_val": 0.8157827854156494
+    },
+    "isotonic": {
+      "ROC_AUC": 0.9625806507498832,
+      "PR_AUC": 0.918270789004408,
+      "Brier": 0.042704294441020245,
+      "cm@0.5": {
+        "threshold": 0.5,
+        "TP": 1290,
+        "FP": 114,
+        "TN": 6606,
+        "FN": 342
+      },
+      "cm@best_val": {
+        "threshold": 0.4794520437717438,
+        "TP": 1305,
+        "FP": 124,
+        "TN": 6596,
+        "FN": 327
+      },
+      "best_thr_from_val": 0.4794520437717438
+    },
+    "Tscale": {
+      "T": 0.9293432831764221,
+      "ROC_AUC": 0.9626274728641457,
+      "PR_AUC": 0.922774290178499,
+      "Brier": 0.055200450266822625,
+      "cm@0.5": {
+        "threshold": 0.5,
+        "TP": 1426,
+        "FP": 403,
+        "TN": 6317,
+        "FN": 206
+      },
+      "cm@best_val": {
+        "threshold": 0.8321812152862549,
+        "TP": 1305,
+        "FP": 124,
+        "TN": 6596,
+        "FN": 327
+      },
+      "best_thr_from_val": 0.8321812152862549
+    },
+    "thr_cost(val)": {
+      "thr": 0.46535353535353535,
+      "test_cost": 1440.0,
+      "cm@thr_cost(test)": {
+        "threshold": 0.46535353535353535,
+        "TP": 1433,
+        "FP": 445,
+        "TN": 6275,
+        "FN": 199
+      }
+    }
+  },
+  "artifacts": {
+    "probs_csv": "bts_on_time_data/eda/week6_v2_prob_test.csv",
+    "pr_uncal_png": "bts_on_time_data/eda/week6_v2_pr_uncal.png",
+    "pr_iso_png": "bts_on_time_data/eda/week6_v2_pr_iso.png",
+    "pr_T_png": "bts_on_time_data/eda/week6_v2_pr_T.png",
+    "rel_uncal_png": "bts_on_time_data/eda/week6_v2_reliability_uncal.png",
+    "rel_iso_png": "bts_on_time_data/eda/week6_v2_reliability_iso.png",
+    "rel_T_png": "bts_on_time_data/eda/week6_v2_reliability_T.png",
+    "cost_curve_val_csv": "bts_on_time_data/eda/week6_v2_cost_curve_val.csv",
+    "training_roc_png": "bts_on_time_data/eda/week6_v2_training_roc.png",
+    "training_pr_png": "bts_on_time_data/eda/week6_v2_training_pr.png",
+    "backtest_csv": "bts_on_time_data/eda/week6_v2_backtest_dl.csv",
+    "vs_week5_csv": "bts_on_time_data/eda/week6_v2_vs_week5.csv"
+  }
+}

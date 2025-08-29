@@ -1,0 +1,128 @@
+{
+  "config": {
+    "epochs": 25,
+    "batch": 1024,
+    "fp_cost": 1.0,
+    "fn_cost": 5.0,
+    "grid": {
+      "hiddens": [
+        [
+          128,
+          64
+        ],
+        [
+          256,
+          128
+        ],
+        [
+          96,
+          48
+        ]
+      ],
+      "drops": [
+        0.0,
+        0.15
+      ],
+      "lrs": [
+        0.001,
+        0.0003
+      ]
+    }
+  },
+  "best_cfg": {
+    "hidden": [
+      128,
+      64
+    ],
+    "drop": 0.0,
+    "lr": 0.001
+  },
+  "uncal": {
+    "ROC_AUC": 0.9560802185457515,
+    "PR_AUC": 0.9112539475781107,
+    "Brier": 0.06392155563028507,
+    "cm@0.5": {
+      "threshold": 0.5,
+      "TP": 959,
+      "FP": 13,
+      "TN": 6707,
+      "FN": 673
+    },
+    "cm@bestF1(val)": {
+      "threshold": 0.10974982380867004,
+      "TP": 1298,
+      "FP": 170,
+      "TN": 6550,
+      "FN": 334
+    },
+    "thr_bestF1_from_val": 0.10974982380867004,
+    "thr_cost_from_val": 0.049595959595959596,
+    "cost_test": 1573.0,
+    "cost_cm": {
+      "threshold": 0.049595959595959596,
+      "TP": 1404,
+      "FP": 433,
+      "TN": 6287,
+      "FN": 228
+    }
+  },
+  "calibrated": {
+    "T": 1.4520392417907715,
+    "ROC_AUC": 0.9560802185457516,
+    "PR_AUC": 0.9112539475781107,
+    "Brier": 0.060024213177292174,
+    "thr_cost_from_val": 0.049595959595959596,
+    "cost_test": 2083.0,
+    "cost_cm": {
+      "threshold": 0.049595959595959596,
+      "TP": 1533,
+      "FP": 1588,
+      "TN": 5132,
+      "FN": 99
+    }
+  },
+  "files": {
+    "probs_uncal": "bts_on_time_data/eda/week6_nn_prob_uncal.csv",
+    "probs_cal": "bts_on_time_data/eda/week6_nn_prob_cal.csv",
+    "pr_uncal_png": "bts_on_time_data/eda/week6_nn_pr_uncal.png",
+    "pr_cal_png": "bts_on_time_data/eda/week6_nn_pr_cal.png",
+    "rel_uncal_png": "bts_on_time_data/eda/week6_nn_reliability_uncal.png",
+    "rel_cal_png": "bts_on_time_data/eda/week6_nn_reliability_cal.png",
+    "cost_curve_val_csv": "bts_on_time_data/eda/week6_cost_curve_val.csv",
+    "perm_numeric_csv": "bts_on_time_data/eda/week6_perm_importance_numeric.csv",
+    "backtest_csv": "bts_on_time_data/eda/week6_backtest_dl.csv",
+    "train_roc_png": "bts_on_time_data/eda/week6_tf_training_roc.png",
+    "train_pr_png": "bts_on_time_data/eda/week6_tf_training_pr.png"
+  },
+  "features": {
+    "num": [
+      "Distance",
+      "CRSDepTime_min",
+      "dow",
+      "is_weekend",
+      "quarter",
+      "DepDelay",
+      "TaxiOut",
+      "route_med_arr_delay_x",
+      "route_med_arr_delay_y",
+      "route_on_7d",
+      "route_med_30d",
+      "route_on_14d",
+      "route_on_30d",
+      "car_on_7d",
+      "car_med_30d",
+      "car_on_14d",
+      "car_on_30d",
+      "orig_hour_load_7d",
+      "dest_hour_load_7d"
+    ],
+    "cat": [
+      "Reporting_Airline",
+      "Origin",
+      "Dest",
+      "tod_bin",
+      "season"
+    ],
+    "y_clf": "ArrDel15"
+  }
+}
