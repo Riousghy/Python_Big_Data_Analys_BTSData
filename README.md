@@ -3,7 +3,7 @@
 **Student:** Guohao (Rious) Yang  
 **Advisor:** Prof. **Yousef Nejatbakhsh**  
 **Course:** **Python-Drive Big Data Analysis**  
-**Term:** **2025 (Spring)**  
+**Term:** **2025 (Summer)**  
 **Repo:** `Python_Big_Data_Analys_BTSData`
 
 Predict U.S. BTS flight delays using a leakage-safe, time-aware pipeline.  
